@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eu e minha solidão</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <audio id="bgMusic" loop>
+        <source src="songs/lacrimosa.mp3" type="audio/mpeg">
+    </audio>
+    <script>
+        let musicStarted = false;
+        const bgMusic = document.getElementById('bgMusic');
+        document.addEventListener('click', () => {
+            if(!musicStarted) {
+                bgMusic.play()
+                    .then(() => {
+                        musicStarted = true;
+                        bgMusic.loop = true;
+                    })
+                    .catch(error => {
+                        console.log('Erro ao iniciar música:', error);
+                    });
+            }
+        });
+        document.body.style.cursor = 'pointer';
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>“A solidão é uma constante em minha vida. Nos bares, nos carros, nas ruas, nas lojas, em toda parte. Não há saída. Sou um homem só.”</h1>
+        <picture>
+            <source media="(min-width: 501px)" srcset="imagens/700x.png">
+            <source media="(max-width: 500px)" srcset="imagens/500x.png">
+            <img src="imagens/700x.png" alt="lixos" class="dynamic-img">
+        </picture>
+        <h1>“Ouça, cambada de sacanas. Comigo vocês não podem. Desafio os imundos, as porcas, os cachorros, os canalhas. Sou um revoltado.”</h1>
+        <h5>Sou apenas um tolo :)</h5>
+    </div>
+
+</body>
+</html>
